@@ -1,0 +1,10 @@
+const express = require('express')
+const router = express.Router()
+const {getAllServiceCenter,addNewServiceCenter,addNewServices,getAllbookings} = require('../controller/adminController')
+const adminAuth = require('../middleware/adminauth')
+// router.route('/').post(getAllServiceCenter)
+router.post('/',getAllServiceCenter)
+router.post('/addCenter',addNewServiceCenter)
+router.post('/addServices',addNewServices)
+router.get('/booking',getAllbookings)
+module.exports = router
